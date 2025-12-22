@@ -5,6 +5,7 @@ from datetime import datetime
 import secrets
 
 app = Flask(__name__)
+app.jinja_env.globals.update(enumerate=enumerate)
 app.config['SECRET_KEY'] = secrets.token_hex(16)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///security_training.db'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False

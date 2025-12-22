@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+
+{% block title %}Result - Phishing Simulator{% endblock %}
+
+{% block content %}
+<div class="card result-card {% if correct %}correct{% else %}incorrect{% endif %}">
+    <div class="result-icon">
+        {% if correct %}
+            ✅
+        {% else %}
+            ❌
+        {% endif %}
+    </div>
+    <h1>{% if correct %}Correct!{% else %}Incorrect{% endif %}</h1>
+    <p style="font-size: 1.2rem; margin: 1rem 0;">
+        {% if correct %}
+            Great job! You correctly identified this as a phishing email.
+        {% else %}
+            This was actually a phishing email. Let's review the red flags.
+        {% endif %}
+    </p>
+</div>
+
+<div class="card">
+    <h2>📧 The Email</h2>
+    <div class="email-container">
+        <div class="email-header">
+            <p><strong>From:</strong> {{ scenario.from_email }}</p>
+            <p><strong>Subject:</strong> {{ scenario.subject }}</p>
+        </div>
+        <div class="email-body">{{ scenario.body }}</div>
+    </div>
+</div>
+
+<div class="red-flags">
+    <h3>🚩 Red Flags in This Email:</h3>
+    <ul>
+        {% for flag in scenario.red_flags %}
+        <li>{{ flag }}</li>
+        {% endfor %}
+    </ul>
+</div>
+
+<div class="card" style="text-align: center;">
+    <a href="{{ url_for('phishing') }}" class="btn btn-primary">Try Another Scenario</a>
+    <a href="{{ url_for('dashboard') }}" class="btn" style="margin-left: 1rem;">Back to Dashboard</a>
+</div>
+{% endblock %}

@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+
+{% block title %}Phishing Simulator - Security Awareness Training{% endblock %}
+
+{% block content %}
+<div class="card">
+    <h1>🎣 Phishing Email Simulator</h1>
+    <p>Test your ability to identify phishing emails! Each scenario contains red flags - can you spot them?</p>
+</div>
+
+<div class="card">
+    <h2>Available Scenarios</h2>
+    <div class="module-grid">
+        {% for scenario in scenarios %}
+        <div class="module-card" onclick="window.location.href='{{ url_for('phishing_scenario', scenario_id=scenario.id) }}'">
+            <h3>{{ scenario.title }}</h3>
+            <p><strong>Difficulty:</strong> 
+                <span style="color: {% if scenario.difficulty == 'Easy' %}#4CAF50{% elif scenario.difficulty == 'Medium' %}#ff9800{% else %}#f44336{% endif %}">
+                    {{ scenario.difficulty }}
+                </span>
+            </p>
+            <p><strong>From:</strong> {{ scenario.from_email }}</p>
+            <a href="{{ url_for('phishing_scenario', scenario_id=scenario.id) }}" class="btn btn-primary">Try This Scenario</a>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+<div class="card" style="background: #fff3cd; border: 2px solid #ffc107;">
+    <h3 style="color: #856404;">💡 Pro Tips</h3>
+    <ul style="color: #856404;">
+        <li>Check the sender's email address carefully</li>
+        <li>Look for urgency or threats</li>
+        <li>Hover over links (don't click!) to see where they lead</li>
+        <li>Watch for spelling and grammar errors</li>
+        <li>Be suspicious of unexpected attachments</li>
+    </ul>
+</div>
+{% endblock %}

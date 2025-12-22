@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="hero">
+    <h1>🔒 Security Awareness Training</h1>
+    <p>Empower your team with cybersecurity knowledge</p>
+    <p>Learn to identify phishing attacks, secure your passwords, and protect against social engineering</p>
+    <div style="margin-top: 2rem;">
+        <a href="{{ url_for('register') }}" class="btn btn-primary" style="margin-right: 1rem;">Get Started</a>
+        <a href="{{ url_for('login') }}" class="btn">Login</a>
+    </div>
+</div>
+
+<div class="card">
+    <h2 style="text-align: center; margin-bottom: 2rem;">Why Security Awareness Training?</h2>
+    <div class="module-grid">
+        <div class="module-card">
+            <h3>🎣 Phishing Protection</h3>
+            <p>90% of successful cyberattacks start with a phishing email. Learn to spot and avoid them.</p>
+        </div>
+        <div class="module-card">
+            <h3>🔑 Password Security</h3>
+            <p>Weak passwords are the #1 cause of data breaches. Master the art of creating unbreakable passwords.</p>
+        </div>
+        <div class="module-card">
+            <h3>🎭 Social Engineering</h3>
+            <p>Attackers manipulate people, not just systems. Understand their tactics and stay protected.</p>
+        </div>
+    </div>
+</div>
+{% endblock %}

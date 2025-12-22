@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block title %}Quiz: {{ module.title }} - Security Awareness Training{% endblock %}
+
+{% block content %}
+<div class="card">
+    <h1>Quiz: {{ module.title }}</h1>
+    <p>Pass with 70% or higher to complete this module.</p>
+</div>
+
+<div class="card">
+    <form method="POST">
+        {% for i, question in enumerate(module.quiz_questions) %}
+        <div class="quiz-question">
+            <h4>Question {{ i + 1 }}: {{ question.question }}</h4>
+            <div class="quiz-options">
+                {% for j, option in enumerate(question.options) %}
+                <label class="quiz-option">
+                    <input type="radio" name="question_{{ i }}" value="{{ j }}" required>
+                    <span>{{ option }}</span>
+                </label>
+                {% endfor %}
+            </div>
+        </div>
+        {% endfor %}
+        
+        <button type="submit" class="btn btn-primary">Submit Quiz</button>
+        <a href="{{ url_for('module', module_id=module.id) }}" class="btn" style="margin-left: 1rem;">Back to Module</a>
+    </form>
+</div>
+{% endblock %}

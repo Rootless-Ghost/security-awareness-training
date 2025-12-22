@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block title %}{{ module.title }} - Security Awareness Training{% endblock %}
+
+{% block content %}
+<div class="card">
+    <a href="{{ url_for('dashboard') }}" style="color: #667eea; text-decoration: none;">← Back to Dashboard</a>
+    <h1 style="margin-top: 1rem;">{{ module.title }}</h1>
+    <p style="color: #666; font-size: 1.1rem;">{{ module.description }}</p>
+</div>
+
+<div class="card">
+    <div class="module-content">
+        {{ module.content | safe }}
+    </div>
+    
+    <div style="margin-top: 2rem; text-align: center;">
+        <a href="{{ url_for('quiz', module_id=module.id) }}" class="btn btn-primary">Take the Quiz</a>
+    </div>
+</div>
+{% endblock %}

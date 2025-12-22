@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+
+{% block title %}Dashboard - Security Awareness Training{% endblock %}
+
+{% block content %}
+<h1>Welcome back, {{ user.username }}! 👋</h1>
+
+<div class="stats-grid">
+    <div class="stat-card">
+        <h3>{{ "%.0f"|format(progress_percentage) }}%</h3>
+        <p>Training Progress</p>
+    </div>
+    <div class="stat-card">
+        <h3>{{ "%.0f"|format(phishing_score) }}%</h3>
+        <p>Phishing Detection Rate</p>
+    </div>
+    <div class="stat-card">
+        <h3>{{ phishing_total }}</h3>
+        <p>Simulations Completed</p>
+    </div>
+</div>
+
+<div class="card">
+    <h2>Your Training Progress</h2>
+    <div class="progress-bar">
+        <div class="progress-fill" style="width: {{ progress_percentage }}%;">
+            {{ "%.0f"|format(progress_percentage) }}%
+        </div>
+    </div>
+</div>
+
+<div class="card">
+    <h2>Training Modules</h2>
+    <div class="module-grid">
+        {% for module in modules %}
+        <div class="module-card" onclick="window.location.href='{{ url_for('module', module_id=module.id) }}'">
+            <h3>{{ module.title }}</h3>
+            <p>{{ module.description }}</p>
+            {% set user_progress = user.progress | selectattr('module_id', 'equalto', module.id) | first %}
+            {% if user_progress and user_progress.completed %}
+                <span style="color: #4CAF50; font-weight: bold;">✓ Completed ({{ user_progress.score }}%)</span>
+            {% else %}
+                <a href="{{ url_for('module', module_id=module.id) }}" class="btn btn-primary">Start Module</a>
+            {% endif %}
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+<div class="card">
+    <h2>Practice Makes Perfect</h2>
+    <p>Ready to test your skills? Try our phishing email simulator!</p>
+    <a href="{{ url_for('phishing') }}" class="btn btn-warning">Launch Phishing Simulator</a>
+</div>
+{% endblock %}

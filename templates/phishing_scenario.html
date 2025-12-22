@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+
+{% block title %}{{ scenario.title }} - Phishing Simulator{% endblock %}
+
+{% block content %}
+<div class="timer" id="timer">Time: 0s</div>
+
+<div class="card">
+    <a href="{{ url_for('phishing') }}" style="color: #667eea; text-decoration: none;">← Back to Scenarios</a>
+    <h1 style="margin-top: 1rem;">{{ scenario.title }}</h1>
+    <p><strong>Difficulty:</strong> 
+        <span style="color: {% if scenario.difficulty == 'Easy' %}#4CAF50{% elif scenario.difficulty == 'Medium' %}#ff9800{% else %}#f44336{% endif %}">
+            {{ scenario.difficulty }}
+        </span>
+    </p>
+</div>
+
+<div class="card">
+    <h2>📧 Email Preview</h2>
+    <div class="email-container">
+        <div class="email-header">
+            <p><strong>From:</strong> {{ scenario.from_email }}</p>
+            <p><strong>Subject:</strong> {{ scenario.subject }}</p>
+        </div>
+        <div class="email-body">{{ scenario.body }}</div>
+    </div>
+</div>
+
+<div class="card">
+    <h2>Is this email legitimate or phishing?</h2>
+    <form method="POST" id="phishingForm">
+        <input type="hidden" name="time_taken" id="timeTaken" value="0">
+        <div style="display: flex; gap: 1rem; justify-content: center; margin-top: 1.5rem;">
+            <button type="submit" name="decision" value="legitimate" class="btn">✅ Legitimate</button>
+            <button type="submit" name="decision" value="phishing" class="btn btn-danger">⚠️ Phishing</button>
+        </div>
+    </form>
+</div>
+
+<script>
+let seconds = 0;
+const timerElement = document.getElementById('timer');
+const timeTakenInput = document.getElementById('timeTaken');
+
+const interval = setInterval(() => {
+    seconds++;
+    timerElement.textContent = `Time: ${seconds}s`;
+    timeTakenInput.value = seconds;
+}, 1000);
+
+document.getElementById('phishingForm').addEventListener('submit', () => {
+    clearInterval(interval);
+});
+</script>
+{% endblock %}

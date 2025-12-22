@@ -1,0 +1,65 @@
+{% extends "base.html" %}
+
+{% block title %}Admin Panel - Security Awareness Training{% endblock %}
+
+{% block content %}
+<div class="card">
+    <h1>👨‍💼 Admin Dashboard</h1>
+    <p>Monitor employee training progress and phishing simulation results</p>
+</div>
+
+<div class="card">
+    <h2>User Statistics</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Username</th>
+                <th>Email</th>
+                <th>Modules Completed</th>
+                <th>Progress</th>
+                <th>Phishing Score</th>
+                <th>Joined</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for stat in user_stats %}
+            <tr>
+                <td>{{ stat.user.username }}</td>
+                <td>{{ stat.user.email }}</td>
+                <td>{{ stat.completed }} / {{ stat.total }}</td>
+                <td>
+                    <div class="progress-bar" style="width: 200px; height: 10px;">
+                        <div class="progress-fill" style="width: {{ (stat.completed / stat.total * 100) if stat.total > 0 else 0 }}%;">
+                        </div>
+                    </div>
+                </td>
+                <td>
+                    {% if stat.phishing_total > 0 %}
+                        {{ "%.0f"|format((stat.phishing_correct / stat.phishing_total * 100)) }}% 
+                        ({{ stat.phishing_correct }}/{{ stat.phishing_total }})
+                    {% else %}
+                        No attempts
+                    {% endif %}
+                </td>
+                <td>{{ stat.user.created_at.strftime('%Y-%m-%d') }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+
+<div class="stats-grid">
+    <div class="stat-card">
+        <h3>{{ user_stats | length }}</h3>
+        <p>Total Users</p>
+    </div>
+    <div class="stat-card">
+        <h3>{{ user_stats | selectattr('completed', 'equalto', user_stats[0].total if user_stats else 0) | list | length }}</h3>
+        <p>Completed All Modules</p>
+    </div>
+    <div class="stat-card">
+        <h3>{{ "%.0f"|format(((user_stats | sum(attribute='phishing_correct') / user_stats | sum(attribute='phishing_total') * 100) if user_stats | sum(attribute='phishing_total') > 0 else 0)) }}%</h3>
+        <p>Average Phishing Detection</p>
+    </div>
+</div>
+{% endblock %}

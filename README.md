@@ -1,4 +1,4 @@
-# 🔒 Security Awareness Training Platform
+# 🔒 Security Awareness Training Platform (Work in progress)
 
 A comprehensive web application for security awareness training, featuring phishing simulations and interactive training modules for small businesses.
 

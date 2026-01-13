@@ -1,6 +1,10 @@
-# 🔒 Security Awareness Training Platform (Work in progress)
+# 🔒 Security Awareness Training Platform
 
-A comprehensive web application for security awareness training, featuring phishing simulations and interactive training modules for small businesses.
+Enterprise-style security awareness and phishing simulation platform for small IT teams, MSPs, and security-conscious organizations.
+
+## Why This Exists
+
+Phishing accounts for 90%+ of initial breach vectors. Most awareness training platforms are expensive enterprise tools or basic slide decks. This platform bridges the gap — real phishing simulations, interactive training modules, and progress tracking without the enterprise price tag.
 
 ## Features
 

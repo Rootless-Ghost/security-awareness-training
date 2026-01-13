@@ -1,8 +1,10 @@
 # 🔒 Security Awareness Training Platform
+
+Enterprise-style security awareness and phishing simulation platform for small IT teams, MSPs, and security-conscious organizations.
+
 ![Python](https://img.shields.io/badge/Python-3.8+-blue?logo=python&logoColor=white)
 ![Flask](https://img.shields.io/badge/Flask-Web%20Framework-black?logo=flask)
 ![License](https://img.shields.io/badge/License-MIT-green)
-Enterprise-style security awareness and phishing simulation platform for small IT teams, MSPs, and security-conscious organizations.
 
 ## Why This Exists
 

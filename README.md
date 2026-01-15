@@ -1,4 +1,5 @@
-# 🔒 Security Awareness Training Platform    (Work in progress)
+# 🔒 Security Awareness Training Platform    
+# (Work in progress)
 
 Enterprise-style security awareness and phishing simulation platform for small IT teams, MSPs, and security-conscious organizations.
 

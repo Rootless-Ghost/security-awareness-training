@@ -35,17 +35,26 @@ Phishing accounts for 90%+ of initial breach vectors. Most awareness training pl
 
 ## Screenshots
 
+### Landing Page
+![Landing Page](docs/screenshots/Landing.png)
+
 ### Dashboard
-![Dashboard](docs/screenshots/dashboard.png)
+![Dashboard](docs/screenshots/Dashboard.png)
 
 ### Training Module
-![Training Module](docs/screenshots/module.png)
+![Training Module](docs/screenshots/Training%20Module.png)
+
+### Quiz
+![Quiz](docs/screenshots/Quiz.png)
 
 ### Phishing Simulator
-![Phishing Simulator](docs/screenshots/phishing-list.png)
+![Phishing Simulator](docs/screenshots/Phishing%20Sim.png)
+
+### Phishing Scenario
+![Phishing Scenario](docs/screenshots/Phishing%20Scenario.png)
 
 ### Admin Panel
-![Admin Panel](docs/screenshots/admin-panel.png)
+![Admin Panel](docs/screenshots/Admin%20Panel.png)
 
 
 

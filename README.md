@@ -10,6 +10,16 @@ Enterprise-style security awareness and phishing simulation platform for small I
 
 Phishing accounts for 90%+ of initial breach vectors. Most awareness training platforms are expensive enterprise tools or basic slide decks. This platform bridges the gap — real phishing simulations, interactive training modules, and progress tracking without the enterprise price tag.
 
+## SOC & Security Team Value
+
+This platform directly supports security operations by:
+
+- **Reducing phishing success rates** through hands-on training
+- **Improving user reporting** — trained users spot and report threats faster
+- **Providing measurable metrics** — track pass rates, detection rates, and identify high-risk users
+- **Supporting compliance requirements** — document security awareness training completion
+- **Reducing triage workload** — fewer successful phishes means fewer incidents to investigate
+
 ## Features
 
 ### 🎯 Core Functionality

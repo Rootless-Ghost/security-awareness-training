@@ -55,11 +55,8 @@ python app.py
 Open your browser to: http://localhost:5000
 ```
 
-### Demo Credentials
-> ⚠️ **For local testing only.** Change immediately in production.
-
-* **Username:** admin
-* **Password:** admin123
+## First Run
+Register an account - the first registered user automatically becomes admin.
 
 ## Usage
 

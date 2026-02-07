@@ -220,7 +220,7 @@ For production deployment:
 
 ## License
 
-This project is open source and available for educational purposes.
+MIT License — see [LICENSE](LICENSE) for details.
 
 ## Contributing
 

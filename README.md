@@ -234,3 +234,7 @@ For issues or questions, create an issue in the repository.
 
 **Built with:** Python, Flask, SQLAlchemy, HTML/CSS/JavaScript  
 **Perfect for:** Small businesses, IT departments, security teams, MSPs
+
+## Author **Rootless-Ghost**
+
+Junior Penetration Tester | Purple Team & SOC Focus

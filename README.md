@@ -223,19 +223,6 @@ For production deployment:
 
 MIT License — see [LICENSE](LICENSE) for details.
 
-## Contributing
-
-Feel free to fork, modify, and expand this platform for your organization's needs!
-
-## Support
-
-For issues or questions, create an issue in the repository.
-
----
-
-**Built with:** Python, Flask, SQLAlchemy, HTML/CSS/JavaScript  
-**Perfect for:** Small businesses, IT departments, security teams, MSPs
-
 ## Author **Rootless-Ghost**
 
 Junior Penetration Tester | Purple Team & SOC Focus

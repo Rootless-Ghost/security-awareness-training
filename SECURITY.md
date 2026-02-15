@@ -8,13 +8,12 @@
 
 ## Reporting a Vulnerability
 
-If you discover a security vulnerability in the Security Awareness Training Platform, please report it responsibly:
+If you discover a security vulnerability in Security-Awareness-Training, please report it responsibly:
 
 **DO NOT** open a public GitHub issue for security vulnerabilities.
 
-Instead, please report security issues via:
+**How to report:**
 - **GitHub Security Advisories**: Use the "Report a vulnerability" button in the Security tab
-- **Email**: [your email]
 
 **What to include in your report:**
 - Description of the vulnerability
@@ -96,7 +95,3 @@ When deploying this platform:
 - Provide immediate debrief after simulations
 - Never harvest real credentials (use this for awareness only)
 - Comply with your organization's security policies and legal requirements
-
----
-
-*For questions about secure deployment or responsible use, contact 

@@ -225,4 +225,4 @@ MIT License — see [LICENSE](LICENSE) for details.
 
 ## Author **Rootless-Ghost**
 
-Junior Penetration Tester | Purple Team & SOC Focus
+Purple Team & SOC Focus
